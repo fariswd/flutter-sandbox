@@ -16,9 +16,9 @@ class App extends StatelessWidget {
       title: 'sanbox',
       home: IndexScreen(),
       routes: <String, WidgetBuilder>{
-        '/home' : (BuildContext context) => HomeScreen(),
-        '/person' : (BuildContext context) => PersonScreen(),
-        '/key' : (BuildContext context) => KeyScreen(),
+        '/home' : (BuildContext context) => HomeScreen(appbar: true,),
+        '/person' : (BuildContext context) => PersonScreen(appbar: true,),
+        '/key' : (BuildContext context) => KeyScreen(appbar: true,),
       },
     );
   }

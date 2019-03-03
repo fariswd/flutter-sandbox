@@ -8,6 +8,9 @@ int count(num) {
 }
 
 class PersonScreen extends StatefulWidget {
+  PersonScreen({Key key, this.appbar});
+  final bool appbar;
+
   @override
   _PersonScreen createState() => new _PersonScreen();
 }
@@ -52,9 +55,11 @@ class _PersonScreen extends State<PersonScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('person'),
-      ),
+      appBar: widget.appbar
+          ? AppBar(
+              title: Text('home'),
+            )
+          : null,
       body: Container(
           child: ListView.builder(
         itemCount: memberIzone == null ? 0 : memberIzone.length,

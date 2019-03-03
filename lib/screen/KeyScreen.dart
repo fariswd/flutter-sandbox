@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class KeyScreen extends StatefulWidget {
+  KeyScreen({this.appbar});
+  final bool appbar;
+
   @override
   _KeyScreenState createState() => _KeyScreenState();
 }
@@ -48,13 +51,15 @@ class _KeyScreenState extends State<KeyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldState,
-      appBar: AppBar(
-        title: Text('key screen'),
-      ),
+      appBar: widget.appbar
+          ? AppBar(
+              title: Text('key screen'),
+            )
+          : null,
       body: Container(
         child: Column(
           children: <Widget>[
-            Text('type: ${inputText == null ? '' :inputText}'),
+            Text('type: ${inputText == null ? '' : inputText}'),
             TextField(
               controller: inputController,
               decoration: InputDecoration(hintText: 'input text'),
